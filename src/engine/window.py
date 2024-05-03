@@ -75,7 +75,3 @@ class GameWindow:
             self.clock.tick(GAME_SETTINGS.frame_rate)
             self.snake.update_position()
 
-
-if __name__ == "__main__":
-    game_window = GameWindow()
-    game_window.run()

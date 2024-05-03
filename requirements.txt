@@ -1,0 +1,2 @@
+# Snake required packages
+pygame == 2.5.2
