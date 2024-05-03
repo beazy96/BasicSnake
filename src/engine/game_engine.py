@@ -7,11 +7,11 @@ from src.engine import GAME_SETTINGS
 from src.engine.snake import Snake, Direction, Food
 
 
-class GameWindow:
-    """Game window class."""
+class GameEngine:
+    """Game engine class."""
 
     def __init__(self) -> None:
-        """Initialize the game window."""
+        """Initialize the game engine."""
         self.window = self._get_window()
         self.clock = pygame.time.Clock()
 
@@ -32,7 +32,7 @@ class GameWindow:
         sys.exit()
 
     def _handle_events(self) -> None:
-        """Handle the events."""
+        """Handle pygame quit and key events."""
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 self._quit_game()
@@ -54,7 +54,7 @@ class GameWindow:
         """Handle the game incidents."""
         self._handle_events()
         if self.snake.check_collision():
-            # Display game over message
+            # TODO Display game over message
             self._quit_game()
         if self.snake.head.colliderect(self.food.get_rectangle):
             self.snake.grow()
@@ -65,6 +65,7 @@ class GameWindow:
         self.window.fill(GAME_SETTINGS.background_color)
         self.snake.draw_body(self.window)
         self.food.draw_food(self.window)
+        # TODO Draw the score
         pygame.display.update()
 
     def run(self) -> None:

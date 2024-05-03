@@ -1,6 +1,6 @@
 """Run the game."""
-from src.engine.window import GameWindow
+from src.engine.game_engine import GameEngine
 
 if __name__ == "__main__":
-    game_window = GameWindow()
-    game_window.run()
+    game = GameEngine()
+    game.run()

@@ -96,7 +96,7 @@ class Snake:
             self.body[0].x -= GAME_SETTINGS.grid_size
 
     def grow(self) -> None:
-        """Grow the snake."""
+        """Grow the snake. Add a new segment at the end of the snake body."""
         self.body.append(pygame.Rect(self.body[-1].x, self.body[-1].y,
                                      GAME_SETTINGS.grid_size, GAME_SETTINGS.grid_size))
 
@@ -112,10 +112,3 @@ class Snake:
     def _check_self_collision(self) -> bool:
         """Check if the snake has collided with itself."""
         return any(segment.colliderect(self.head) for segment in self.body[1:])
-
-    def _check_food_collision(self, food: Food) -> bool:
-        """Check if the snake has collided with the food."""
-        return self.head.colliderect(food.get_rectangle)
-
-
-
