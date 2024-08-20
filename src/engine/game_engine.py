@@ -1,4 +1,4 @@
-"""Game window module."""
+"""Game window and game engine module."""
 import sys
 
 import pygame
